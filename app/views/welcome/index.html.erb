@@ -13,3 +13,18 @@
   <% end %>
 
 </div>
+
+
+
+
+
+<div id="user_nav">
+  <% if mail_user_signed_in? %>
+    Signed in as <%= current_mail_user.email %>. Not you?
+    <%= link_to "Sign out", destroy_mail_user_session_path, method: 'delete' %>
+  <% else %>
+    <%= link_to "Sign up", new_mail_user_registration_path %> or
+    <%= link_to "Sign in", new_mail_user_session_path %>
+  <% end %>
+</div>
+
